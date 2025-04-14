@@ -3,6 +3,7 @@
 
 
 if (isset($_POST["tambahUser"])) {
+  print_r($_POST); // TEMPORARY! Buat debug doang
   if (tambahUser($_POST) > 0) {
     echo "<script>
             alert('User Berhasil Ditambahkan');
@@ -91,7 +92,7 @@ if (isset($_POST["tambahUser"])) {
     <div class="dashboard-content">
       <div class="row">
         <div class="col-12 mt-2">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+          <form action="?page=users-create" method="POST">
             <div class="card">
               <div class="card-body">
                 <div class="row">

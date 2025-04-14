@@ -216,8 +216,8 @@ function tambahUser($data)
     $email = stripslashes($data["email"]);
     $phone_number = $data["phone_number"];
     $password = password_hash($data["password"], PASSWORD_DEFAULT);
-    $alamat = $data["alamat"]; // Ini address di SQL
-    $code = $data["code"];     // Ini postal_code di SQL
+    $alamat = $data["alamat"]; // address
+    $code = $data["code"];     // postal_code
     $roles = $data["roles"];
 
     $query = "INSERT INTO users (name, email, password, address, phone_number, postal_code, roles)
@@ -232,6 +232,7 @@ function tambahUser($data)
     mysqli_stmt_close($stmt);
     return $affectedRows;
 }
+
 
 function updateUser($data)
 {
